@@ -31,12 +31,8 @@ function App() {
       <h2>Pacotes</h2>
       <div className='pacotes'>
         {pacotes.map(p => (
-          <div key={p.id}>
-            <Pacote pacote={p} /> 
-            <button onClick={() => excluirPacote(p.id)}>
-              Excluir
-            </button>
-          </div>))}
+            <Pacote key={p.id} pacote={p} onExcluir={() => excluirPacote(p.id)}/> 
+        ))}
       </div>
     </section>
   )

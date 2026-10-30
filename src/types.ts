@@ -5,3 +5,8 @@ export type PacoteType = {
   profundidade: number;
   peso: number;
 }
+
+export type PacoteProps = {
+  pacote: PacoteType;
+  onExcluir: () => void;
+}
