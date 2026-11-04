@@ -18,7 +18,12 @@ export default function Pacote({pacote, dispacher}: PacoteProps) {
             <dt>Cubagem (cm³)</dt>
             <dd>{400*pacote.altura/100*pacote.largura/100*pacote.profundidade/100}</dd>
             <dd>
-                <button onClick={() => dispacher({type: "excluir", id:pacote.id})}>Excluir</button>
+                <button onClick={() => dispacher({type: "excluir", id:pacote.id})}>
+                    Excluir
+                </button>
+                <button onClick={() => dispacher({type: "repetir", id:pacote.id, dimensao: "altura"})}>
+                    Repetir altura
+                </button>
             </dd>
         </div>)
 }

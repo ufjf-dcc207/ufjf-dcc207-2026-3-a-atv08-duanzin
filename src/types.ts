@@ -14,6 +14,7 @@ export type PacoteProps = {
 export type AcaoPacoteExcluir = {
     type: string;
     id: string;
+    dimensao: string;
 }
 
 export type ListagemDePacotesProps = {
