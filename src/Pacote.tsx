@@ -1,8 +1,8 @@
 import "./Pacote.css"
-import type { PacoteProps} from "./types.ts"
+import type { PacoteProps } from "./types.ts"
 
 
-export default function Pacote({pacote, acaoExcluir}: PacoteProps) {
+export default function Pacote({pacote, dispacher}: PacoteProps) {
     return (
         <div className="pacote">
             <dt>id</dt>
@@ -18,7 +18,7 @@ export default function Pacote({pacote, acaoExcluir}: PacoteProps) {
             <dt>Cubagem (cm³)</dt>
             <dd>{400*pacote.altura/100*pacote.largura/100*pacote.profundidade/100}</dd>
             <dd>
-                <button onClick={() => acaoExcluir(pacote.id)}>Excluir</button>
+                <button onClick={() => dispacher({type: "excluir", id:pacote.id})}>Excluir</button>
             </dd>
         </div>)
 }

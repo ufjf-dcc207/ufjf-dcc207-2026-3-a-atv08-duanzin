@@ -8,10 +8,15 @@ export type PacoteType = {
 
 export type PacoteProps = {
   pacote: PacoteType;
-  acaoExcluir: (id: string)=>void;
+  dispacher: React.ActionDispatch<[action: AcaoPacoteExcluir]>;
+}
+
+export type AcaoPacoteExcluir = {
+    type: string;
+    id: string;
 }
 
 export type ListagemDePacotesProps = {
     pacotes: Array<PacoteType>;
-    acaoExcluir: (id:string) => void;
+    dispacher: React.ActionDispatch<[action: AcaoPacoteExcluir]>;
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { ListagemDePacotesProps } from "./types";
 import Pacote from "./Pacote";
 
-export default function ListagemDePacotes({pacotes, acaoExcluir}: ListagemDePacotesProps) {
+export default function ListagemDePacotes({pacotes, dispacher}: ListagemDePacotesProps) {
     const [ordenacao, setOrdenacao] = useState("peso");
     function mudaOrdenacao(evento) {
         setOrdenacao(evento.target.value);
@@ -22,7 +22,7 @@ export default function ListagemDePacotes({pacotes, acaoExcluir}: ListagemDePaco
                 {pacotes
                     .sort((x, y) => y[ordenacao] - x[ordenacao])
                     .map(p => (
-                        <Pacote pacote={p} key={p.id} acaoExcluir={acaoExcluir} />
+                        <Pacote pacote={p} key={p.id} dispacher={dispacher} />
                     ))}
             </dl>
         </div>
