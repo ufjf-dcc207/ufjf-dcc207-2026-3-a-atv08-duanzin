@@ -8,5 +8,10 @@ export type PacoteType = {
 
 export type PacoteProps = {
   pacote: PacoteType;
-  onExcluir: () => void;
+  acaoExcluir: (id: string)=>void;
+}
+
+export type ListagemDePacotesProps = {
+    pacotes: Array<PacoteType>;
+    acaoExcluir: (id:string) => void;
 }
